@@ -9,3 +9,11 @@
 /LibraryWebAPI/obj
 /RepositoryLayer/obj
 /ServiceLayer/obj
+/DomainLayer/bin/Debug/net6.0
+/DomainLayer/obj/Debug
+/DomainLayer/obj
+/DomainLayer/obj/Debug/net6.0/ref
+/DomainLayer/obj/Debug/net6.0/refint
+/LibraryWebAPI/bin/Debug/net6.0
+/RepositoryLayer/bin/Debug/net6.0
+/ServiceLayer/bin/Debug/net6.0
