@@ -6,3 +6,6 @@
 /.vs/LibraryTestApplication/FileContentIndex
 *.v2
 /.vs/ProjectEvaluation
+/LibraryWebAPI/obj
+/RepositoryLayer/obj
+/ServiceLayer/obj
