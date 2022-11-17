@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 #region Service Injected
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IBookService<Book>, BookService>();
+builder.Services.AddScoped<IAuthorService<Author>, AuthorService>();
 
 #endregion
 

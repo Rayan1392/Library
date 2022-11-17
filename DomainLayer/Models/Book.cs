@@ -10,6 +10,6 @@ namespace DomainLayer.Models
         public string Title { get; set; }
         public string Publisher { get; set; }
         public DateTime PublishDate { get; set; }
-        public ICollection<BookAuthor> BookAuthors { get; set; }
+        public ICollection<Author> Authors { get; set; }
     }
 }

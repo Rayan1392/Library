@@ -10,21 +10,21 @@ namespace LibraryWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class AuthorsController : ControllerBase
     {
-        private readonly IBookService<Book> _bookService;
+        private readonly IAuthorService<Author> _authorService;
         private readonly LibraryDbContext _libraryDbContext;
-        public BooksController(IBookService<Book> bookService,
+        public AuthorsController(IAuthorService<Author> authorService,
             LibraryDbContext applicationDbContext)
         {
-            _bookService = bookService;
+            _authorService = authorService;
             _libraryDbContext = applicationDbContext;
         }
 
-        [HttpGet(nameof(GetBookById))]
-        public IActionResult GetBookById(int Id)
+        [HttpGet(nameof(GetAuthorById))]
+        public IActionResult GetAuthorById(int Id)
         {
-            var obj = _bookService.Get(Id);
+            var obj = _authorService.Get(Id);
             if (obj == null)
             {
                 return NotFound();
@@ -34,10 +34,10 @@ namespace LibraryWebAPI.Controllers
                 return Ok(obj);
             }
         }
-        [HttpGet(nameof(GetAllBook))]
-        public IActionResult GetAllBook()
+        [HttpGet(nameof(GetAllAuthor))]
+        public IActionResult GetAllAuthor()
         {
-            var obj = _bookService.GetAll();
+            var obj = _authorService.GetAll();
             if (obj == null)
             {
                 return NotFound();
@@ -48,12 +48,12 @@ namespace LibraryWebAPI.Controllers
             }
         }
 
-        [HttpPost(nameof(CreateBook))]
-        public IActionResult CreateBook(Book book)
+        [HttpPost(nameof(CreateAuthor))]
+        public IActionResult CreateAuthor(Author author)
         {
-            if (book != null)
+            if (author != null)
             {
-                _bookService.Insert(book);
+                _authorService.Insert(author);
                 return Ok("Created Successfully");
             }
             else
@@ -62,12 +62,12 @@ namespace LibraryWebAPI.Controllers
             }
         }
 
-        [HttpPost(nameof(UpdateBook))]
-        public IActionResult UpdateBook(Book book)
+        [HttpPost(nameof(UpdateAuthor))]
+        public IActionResult UpdateAuthor(Author author)
         {
-            if (book != null)
+            if (author != null)
             {
-                _bookService.Update(book);
+                _authorService.Update(author);
                 return Ok("Updated SuccessFully");
             }
             else
@@ -77,12 +77,12 @@ namespace LibraryWebAPI.Controllers
 
         }
 
-        [HttpDelete(nameof(DeleteBook))]
-        public IActionResult DeleteBook(Book book)
+        [HttpDelete(nameof(DeleteAuthor))]
+        public IActionResult DeleteAuthor(Author author)
         {
-            if (book != null)
+            if (author != null)
             {
-                _bookService.Delete(book);
+                _authorService.Delete(author);
                 return Ok("Deleted Successfully");
             }
             else
